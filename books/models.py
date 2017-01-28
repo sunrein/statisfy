@@ -1,7 +1,4 @@
-from sqlalchemy import (
-	Column,
-
-)
+from database import db
 
 class Book(db.Model):
 	__tablename__ = 'book'
