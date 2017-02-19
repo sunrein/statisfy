@@ -9,4 +9,14 @@ class Book(db.Model):
 	length_category = db.Column(db.Enum('NOVEL', 'NOVELETTE', 'NOVELLA', 'SHORT_STORY', 'ANTHOLOGY', 'GRAPHIC_NOVEL'), nullalbe=False)
 	age_group = db.Column(db.Enum('ADULT', 'YOUNG_ADULT', 'MIDDLE_GRADE', 'EARLY_READER'), nullable=False)
 
-	# Question - should there be any validations on the Book model?
+	editions = db.relationship('statisfy.editions.models.Edition', uselist=True)
+
+
+	def __init__(title, author, length_category, age_group):
+		self.title = title
+		self.author = author
+		self.length_category = length_category
+		self.age_group = age_group
+
+	def __repr__():
+		return "<Book id: {id}>".format(id=self.id)

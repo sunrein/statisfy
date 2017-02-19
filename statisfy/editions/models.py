@@ -7,4 +7,6 @@ class Edition(db.Model):
     page_count = db.Column(db.Integer, nullable=False)
     format = db.Column(db.Enum('PHYSICAL', 'DIGITAL', 'AUDIOBOOK'), nullable=False)
     publisher = db.Column(db.String(255), nullable=False)
-    book_id = db.Column(db.Integer, ForeignKey("book.book_id"), nullable=False)
+    book_id = db.Column(db.Integer, ForeignKey("book.id"), nullable=False)
+
+    book = db.relationship('statisfy.books.models.Book', uselist=False)

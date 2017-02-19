@@ -1,7 +1,7 @@
 from flask import Blueprint
 
-main = Blueprint('main', __name__)
+book_blueprint = Blueprint('book', __name__)
 
-@main.route('/')
+@book_blueprint.route('/', methods=['GET'])
 def index():
     return "Main"
