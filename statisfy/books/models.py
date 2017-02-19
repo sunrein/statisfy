@@ -20,3 +20,7 @@ class Book(db.Model):
 
 	def __repr__():
 		return "<Book id: {id}>".format(id=self.id)
+		return "<Book title: {title}>".format(title=self.title)
+		return "<Book author: {author}>".format(author=self.author)
+		return "<Length Category: {length_category}">.format(length_category=self.length_category)
+		return "<Age group: {age_group}>".format(age_group=self.age_group)
