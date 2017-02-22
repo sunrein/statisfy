@@ -16,8 +16,8 @@ class User(db.Model):
         self.password = password
         self.email = email
 
-    def __repr__():
-        return "<User id: {id}>".format(id=self.id)
-        return "<User username: {username}>".format(username=self.username)
-        return "<User password: {password}>".format(password=self.password)
-        return "<User email: {email}>".format(email=self.email)
+    # def __repr__():
+    #     return "<User id: {id}>".format(id=self.id)
+    #     return "<User username: {username}>".format(username=self.username)
+    #     return "<User password: {password}>".format(password=self.password)
+    #     return "<User email: {email}>".format(email=self.email)
