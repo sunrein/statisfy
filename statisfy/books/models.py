@@ -12,15 +12,11 @@ class Book(db.Model):
 	editions = db.relationship('statisfy.editions.models.Edition', uselist=True)
 
 
-	def __init__(title, author, length_category, age_group):
+	def __init__(self, title, author, length_category, age_group):
 		self.title = title
 		self.author = author
 		self.length_category = length_category
 		self.age_group = age_group
-	#
-	# def __repr__():
-	# 	return "<Book id: {id}>".format(id=self.id)
-	# 	return "<Book title: {title}>".format(title=self.title)
-	# 	return "<Book author: {author}>".format(author=self.author)
-	# 	return "<Length Category: {length_category}">.format(length_category=self.length_category)
-	# 	return "<Age group: {age_group}>".format(age_group=self.age_group)
+
+	def __repr__(self):
+		return "<Book id: {id}>".format(id=self.id)
