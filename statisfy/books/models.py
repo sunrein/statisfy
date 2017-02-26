@@ -1,4 +1,4 @@
-from database import db
+from app import db
 
 class Book(db.Model):
 	__tablename__ = 'book'
@@ -9,8 +9,7 @@ class Book(db.Model):
 	length_category = db.Column(db.Enum('NOVEL', 'NOVELETTE', 'NOVELLA', 'SHORT_STORY', 'ANTHOLOGY', 'GRAPHIC_NOVEL'), nullable=False)
 	age_group = db.Column(db.Enum('ADULT', 'YOUNG_ADULT', 'MIDDLE_GRADE', 'EARLY_READER'), nullable=False)
 
-	editions = db.relationship('statisfy.editions.models.Edition', uselist=True)
-
+	# editions = db.relationship('statisfy.editions.models.Edition', uselist=True)
 
 	def __init__(self, title, author, length_category, age_group):
 		self.title = title
