@@ -16,7 +16,7 @@ class Reads(db.Model):
     user = db.relationship("statisfy.users.models.User", uselist=False)
     book = db.relationship("statisfy.books.models.Book", uselist=False)
 
-    def __init__(self, user_id, book_id, start_date, end_date, star_rating, genre, external_review):
+    def __init__(self, user_id, book_id, start_date=None, end_date=None, star_rating=None, genre=None, external_review=None):
         self.user_id = user_id
         self.book_id = book_id
         self.start_state = start_date
