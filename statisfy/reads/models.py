@@ -9,14 +9,14 @@ class Reads(db.Model):
     book_id = db.Column(db.Integer, db.ForeignKey("book.id"), nullable=False)
     start_date = db.Column(db.DateTime)
     end_date = db.Column(db.DateTime)
-    star_rating = db.Column(db.Integer) # should this be an enum instead? How to limit range?
+    star_rating = db.Column(db.Integer)
     genre = db.Column(db.String(255))
-    external_review = db.Column(db.Enum()) #unsure of categories
+    external_review = db.Column(db.String(255))
 
     user = db.relationship("statisfy.users.models.User", uselist=False)
     book = db.relationship("statisfy.books.models.Book", uselist=False)
 
-    def __init__(self, user_id, book_id, start_date, end_date, star_ratig, genre, external_review):
+    def __init__(self, user_id, book_id, start_date, end_date, star_rating, genre, external_review):
         self.user_id = user_id
         self.book_id = book_id
         self.start_state = start_date

@@ -9,7 +9,9 @@ class Book(db.Model):
 	length_category = db.Column(db.Enum('NOVEL', 'NOVELETTE', 'NOVELLA', 'SHORT_STORY', 'ANTHOLOGY', 'GRAPHIC_NOVEL', name='book_length_category'), nullable=False)
 	age_group = db.Column(db.Enum('ADULT', 'YOUNG_ADULT', 'MIDDLE_GRADE', 'EARLY_READER', name='book_age_group'), nullable=False)
 
-	edition = db.relationship('statisfy.editions.models.Edition', uselist=True)
+	# edition = db.relationship('statisfy.editions.models.Edition', uselist=True)
+
+	# reads = db.relationship('statisfy.reads.models.Reads', uselist=True)
 
 	def __init__(self, title, author, length_category, age_group):
 		self.title = title

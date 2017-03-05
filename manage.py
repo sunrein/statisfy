@@ -14,7 +14,7 @@ def load_models():
     from statisfy.acquisitions.models import Acquisition
     from statisfy.editions.models import Edition
     from statisfy.users.models import User
-    # from statisfy.reads.models import Reads
+    from statisfy.reads.models import Reads
 
 migrate = Migrate(app, db)
 manager = Manager(app)
