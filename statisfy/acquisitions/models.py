@@ -1,5 +1,6 @@
-from app import db
 from datetime import datetime
+
+from database import db
 
 class Acquisition(db.Model):
     __tablename__ = 'acquisition'
