@@ -12,7 +12,7 @@ class Book(db.Model):
 	editions = db.relationship('statisfy.editions.models.Edition', uselist=True)
 
 
-	def __init__(self, title, author, length_category, age_group):
+	def __init__(self, title, author, length_category, age_group, **kwargs):
 		self.title = title
 		self.author = author
 		self.length_category = length_category

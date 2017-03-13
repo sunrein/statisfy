@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/book" method="post">
+<dl>
+<dt>Title</dt>
+<dd><input type="text" name="title" value="{{ book.title }}"></dd>
+<dt>Author</dt>
+<dd><input type="text" name="author" value="{{ book.author }}"></dd>
+<dt>Length Category</dt>
+  <select name="length_category">
+    <option value="NOVEL">Novel</option>
+    <option value="NOVELETTE">Novelette</option>
+    <option value="NOVELLA">Novella</option>
+    <option value="SHORT_STORY">Short Story</option>
+    <option value="ANTHOLOGY">Anthology</option>
+    <option value="GRAPHIC_NOVEL">Graphic Novel</option>
+  </select>
+<dt>Age Group</dt>
+  <select name="age_group">
+    <option value="ADULT">Adult</option>
+    <option value="YOUNG_ADULT">Young Adult</option>
+    <option value="MIDDLE_GRADE">Middle Grade</option>
+    <option value="EARLY_READER">Early Reader</option>
+  </select>
+<dd><input type="submit" value="Edit Book"></dd>
+</dl>
+</form>
+{% endblock %}
