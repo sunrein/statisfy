@@ -13,14 +13,14 @@ def index():
     page_view = book_template.render(books=books)
     return page_view
 
-@book_blueprint.route("book", methods=["GET", "POST"])
+@book_blueprint.route("books/new", methods=["GET", "POST"])
 def create():
     if request.method == 'POST':
         book = Book(
-            title=request.form['title'],
-            author=request.form['author'],
-            length_category=request.form['length_category'],
-            age_group=request.form['age_group']
+                    title=request.form['title'],
+                    author=request.form['author'],
+                    length_category=request.form['length_category'],
+                    age_group=request.form['age_group']
         )
         db.session.add(book)
         db.session.commit()

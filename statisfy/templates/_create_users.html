@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create your account</h2>
+<form action="/user" method="post">
+<dl>
+    <dt>Username</dt>
+    <dd><input type="text" name="username"></dd>
+    <dt>Password</dt>
+    <dd><input type="password" name="password"></dd>
+    <dt>Email</dt>
+    <dd><input type="text" name="email"></dd>
+    <dd><input type="submit" value="Register"></dd>
+</dl>
+</form>
+{% endblock %}

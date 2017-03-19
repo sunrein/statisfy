@@ -1,4 +1,6 @@
 from database import db
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(db.Model):
     __tablename__ = 'user'
@@ -18,3 +20,23 @@ class User(db.Model):
 
     def __repr__(self):
         return "<User id: {id}>".format(id=self.id)
+
+    @property
+    def password(self):
+        """
+        Prevent pasword from being accessed
+        """
+        raise AttributeError('password is not a readable attribute.')
+
+    @password.setter
+    def password(self, password):
+        """
+        Set password to a hashed password
+        """
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        """
+        Check if hashed password matches actual password
+        """
+        return check_password_hash(self.password_hash, password)
